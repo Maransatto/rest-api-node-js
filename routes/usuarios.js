@@ -20,7 +20,7 @@ router.post('/cadastro', (req, res, next) => {
                         (error, results) => {
                             conn.release();
                             if (error) { return res.status(500).send({ error: error }) }
-                            response = {
+                            const response = {
                                 mensagem: 'Usuário criado com sucesso',
                                 usuarioCriado: {
                                     id_usuario: results.insertId,
