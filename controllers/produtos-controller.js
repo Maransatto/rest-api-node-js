@@ -32,13 +32,35 @@ exports.getProdutos = (req, res, next) => {
 exports.postProduto = (req, res, next) => {
     mysql.getConnection((error, conn) => {
         if (error) { return res.status(500).send({ error: error }) }
+
+        /*
+
+        Neste caso, req.body tem que ser neste formato:
+        [
+            ["Nome do Produto 1", 1900],
+            ["Nome do Produto 2", 1700]
+        ]
+
+        Se for necessário enviar uma lista de objetos, ex:
+        {
+            produtos: [{
+                nome: "nome",
+                preco: 9000
+            },{
+                nome: "nome",
+                preco: 9000
+            }]
+        }
+        você precisaria transformar aqui seu array de objeto em um array comum.
+
+        O problema é que trabalhando com o JSON desta forma, não é possível enviar a imagem do produto
+        por aqui. Neste caso, a princípio, eu faria um outro endpoint pra receber 1 imagem de cada vez.
+
+        Mesmo assim, talvez tenha como receber vários registros no formData. É que eu nunca usei, então não tenho certeza.
+        Veja: https://stackoverflow.com/questions/12989442/uploading-multiple-files-using-formdata
+        */
         conn.query(
-            'INSERT INTO produtos (nome, preco, imagem_produto) VALUES (?,?,?)',
-            [
-                req.body.nome,
-                req.body.preco,
-                req.file.path
-            ],
+            `INSERT INTO produtos (nome, preco) VALUES ?`,[req.body],
             (error, result, field) => {
                 conn.release();
                 if (error) { return res.status(500).send({ error: error }) }
@@ -48,7 +70,7 @@ exports.postProduto = (req, res, next) => {
                         id_produto: result.id_produto,
                         nome: req.body.nome,
                         preco: req.body.preco,
-                        imagem_produto: req.file.path,
+                        // imagem_produto: req.file.path,
                         request: {
                             tipo: 'GET',
                             descricao: 'Retorna todos os produtos',
