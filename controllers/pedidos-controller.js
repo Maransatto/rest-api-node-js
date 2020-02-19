@@ -59,7 +59,7 @@ exports.postPedidos = (req, res, next) => {
                     const response = {
                         mensagem: 'Pedido inserido com sucesso',
                         pedidoCriado: {
-                            id_pedido: result.id_pedido,
+                            id_pedido: result.insertId,
                             id_produto: req.body.id_produto,
                             quantidade: req.body.quantidade,
                             request: {

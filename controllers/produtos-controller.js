@@ -45,7 +45,7 @@ exports.postProduto = (req, res, next) => {
                 const response = {
                     mensagem: 'Produto inserido com sucesso',
                     produtoCriado: {
-                        id_produto: result.id_produto,
+                        id_produto: result.insertId,
                         nome: req.body.nome,
                         preco: req.body.preco,
                         imagem_produto: req.file.path,
