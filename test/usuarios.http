@@ -1,0 +1,9 @@
+# Faz o login do usuário
+POST http://localhost:3000/usuarios/login
+Content-Type: application/json
+
+{
+    "email" : "fernando.maransatto@gmail.com",
+    "senha" : "123456"
+}
+###
