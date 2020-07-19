@@ -1,0 +1,26 @@
+# Get orders
+GET http://localhost:3000/orders
+Content-Type: application/json
+###
+
+# Post order
+POST http://localhost:3000/orders
+Content-Type: application/json
+
+{
+    "productId": 5,
+    "quantity": 2
+}
+###
+
+# Get order detail
+GET http://localhost:3000/orders/2
+Content-Type: application/json
+###
+
+
+# Remove an order
+DELETE http://localhost:3000/orders/2
+Content-Type: application/json
+###
+

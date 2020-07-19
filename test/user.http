@@ -1,0 +1,21 @@
+# Cadastra um Usuário
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+    "email" : "lucasbrito@gmail.com",
+    "password" : "brito"
+}
+
+###
+
+# Faz o login do usuário
+POST http://localhost:3000/users/login
+Content-Type: application/json
+
+{
+    "email" : "lucasbrito@gmail.com",
+    "password" : "brito"
+}
+###
+

@@ -1,0 +1,46 @@
+# Retorna todos os produtos
+GET http://localhost:3000/products/
+Content-Type: application/json
+###
+
+# Retorna detalhes de um produto
+GET http://localhost:3000/products/2
+Content-Type: application/json
+###
+
+# Altera um produto
+PATCH http://localhost:3000/products/1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imx1Y2lhbm9AZ21haWwuY29tIiwiaWF0IjoxNTk1MTAwMzkwLCJleHAiOjE1OTUxMDM5OTB9.9-wb_FgeE-fy6sk3vhwoluYY2LK5wfqHq4Yniv4f76M
+
+{
+    "name" : "Caneta Azul Alterada",
+    "price" : 11.50
+}
+###
+
+# Remove um produto
+DELETE http://localhost:3000/products/3
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imx1Y2lhbm9AZ21haWwuY29tIiwiaWF0IjoxNTk1MTAwMzkwLCJleHAiOjE1OTUxMDM5OTB9.9-wb_FgeE-fy6sk3vhwoluYY2LK5wfqHq4Yniv4f76M
+###
+
+# Remove um produto
+DELETE http://localhost:3000/products/3
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imx1Y2lhbm9AZ21haWwuY29tIiwiaWF0IjoxNTk1MTAwMzkwLCJleHAiOjE1OTUxMDM5OTB9.9-wb_FgeE-fy6sk3vhwoluYY2LK5wfqHq4Yniv4f76M
+###
+
+
+# Insere uma imagem
+POST http://localhost:3000/produtos
+Content-Type: multipart/form-data;
+
+-------
+Content-Disposition: form-data; nome="caneta"; preco="10.99; "
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF91c3VhcmlvIjoyMiwiZW1haWwiOiJmZXJuYW5kby5tYXJhbnNhdHRvQGdtYWlsLmNvbSIsImlhdCI6MTU5NDg0Mzg2MiwiZXhwIjoxNTk0ODQ3NDYyfQ.KSSKiAfIfCpBWWA-j_dL40c-t2YY1yk2wKIq8mGfQJU
+
+< /Users/maransatto/Pictures/curso/caneta-vermelha.jpg
+###
+
+
