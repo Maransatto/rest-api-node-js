@@ -3,8 +3,8 @@ POST http://localhost:3000/users
 Content-Type: application/json
 
 {
-    "email" : "lucasbrito@gmail.com",
-    "password" : "brito"
+    "email" : "fernando.maransatto@gmail.com",
+    "password" : "maransatto"
 }
 
 ###
@@ -14,8 +14,8 @@ POST http://localhost:3000/users/login
 Content-Type: application/json
 
 {
-    "email" : "lucasbrito@gmail.com",
-    "password" : "brito"
+    "email" : "fernando.maransatto@gmail.com",
+    "password" : "maransatto"
 }
 ###
 
