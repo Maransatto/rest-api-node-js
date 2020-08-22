@@ -38,3 +38,20 @@ CREATE TABLE IF NOT EXISTS productImages (
     path VARCHAR(255),
     FOREIGN KEY (productId) REFERENCES products (productId)
 );
+
+-- 22/08/2020
+CREATE TABLE IF NOT EXISTS categories (
+    categoryId INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(100)
+);
+
+ALTER TABLE products ADD categoryId INT NULL;
+
+INSERT INTO categories (name) VALUES ('Material Escolar');
+
+UPDATE products SET categoryId = 1;
+
+ALTER TABLE products MODIFY categoryId INT NOT NULL;
+ALTER TABLE products ADD CONSTRAINT fk_product_category
+FOREIGN KEY (categoryId) REFERENCES categories(categoryId);
+
