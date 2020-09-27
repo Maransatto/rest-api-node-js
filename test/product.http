@@ -1,5 +1,5 @@
 # Retorna todos os produtos
-GET http://localhost:3000/products/
+GET http://localhost:3000/products/?categoryId=1&name=Preta
 Content-Type: application/json
 ###
 

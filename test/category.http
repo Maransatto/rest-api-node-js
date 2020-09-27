@@ -1,0 +1,15 @@
+# Busca as categorias
+GET http://localhost:3000/categories
+Content-Type: application/json
+###
+
+
+# Inclui uma nova categoria
+POST http://localhost:3000/categories
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoiZmVybmFuZG8ubWFyYW5zYXR0b0BnbWFpbC5jb20iLCJpYXQiOjE1OTgxMDg4NTQsImV4cCI6MTU5ODExMjQ1NH0.ucknamagC3fVhox_PIVmCfpmAneoplPW3SFPrt_7j9I
+
+{
+    "name" : "Roupas"
+}
+###

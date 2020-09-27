@@ -31,6 +31,7 @@ const upload = multer({
 });
 
 router.get('/', ProductsController.getProducts);
+
 router.post(
     '/',
     login.required,

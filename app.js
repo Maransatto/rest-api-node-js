@@ -4,6 +4,7 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser');
 
 const productRoute = require('./routes/product-route');
+const categoryRoute = require('./routes/category-route');
 const orderRoute = require('./routes/order-route');
 const userRoute = require('./routes/user-route');
 const imageRoute  = require('./routes/image-route');
@@ -28,6 +29,7 @@ app.use((req, res, next) => {
 });
 
 app.use('/products', productRoute);
+app.use('/categories', categoryRoute);
 app.use('/orders', orderRoute);
 app.use('/users', userRoute);
 app.use('/images', imageRoute);
